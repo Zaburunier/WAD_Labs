@@ -12,7 +12,8 @@ class Shape(ABC):
 
     # Виртуальный метод форматированного представления всех фигур
     def __repr__(shapeObject):
-        return "Данная фигура является {0}ом, имеет {1} цвет, а её площадь равняется {2} на основании введённых числовых параметров:".format(shapeObject.GetType(), shapeObject.color.Color, shapeObject.Square())
+        return "Данная фигура является {0}ом, имеет {1} цвет, а её площадь равняется {2} на основании введённых" \
+               " числовых параметров:".format(shapeObject.GetType(), shapeObject.color.Color, shapeObject.Square())
 
     # Статический метод проверки корректности ввода числовых значений (для измерений)
     @staticmethod
@@ -21,7 +22,6 @@ class Shape(ABC):
             # Проверяем возможность перевода в численный формат
             value = float(num)
             # Если возможно, то возвращаем полученное значение без изменений
-            return value
         except ValueError:
             # Если преобразование типа невозможно, то требуем повторного ввода до тех пор, пока не получим число
             isNum = False
@@ -32,4 +32,4 @@ class Shape(ABC):
                     isNum = True
                 except ValueError:
                     pass
-            return value
+        return value
