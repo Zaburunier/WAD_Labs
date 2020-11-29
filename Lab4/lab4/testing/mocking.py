@@ -30,4 +30,3 @@ class DiffTesting(unittest.TestCase):
         self.assertTrue(
             SetDifferenceContext(NaturalStrategy()).ExecuteOperation(self.set1, self.set2) >
                         set([]))
-
