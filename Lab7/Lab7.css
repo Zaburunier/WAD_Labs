@@ -1,0 +1,74 @@
+body {
+	background: #FCD3FD;
+	font-family: sans-serif;
+	font-size: 20px;
+}
+
+.navbar {
+	animation-name: slide-in;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+}
+
+.navbar-brand{
+	color: #FCD3FD;
+	font-size: 20px;
+	width: 250px;
+	height: 40px;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.navbar-brand:hover {
+	color: #FFFFFF;
+}
+
+.nav-item {
+	padding: 10px;
+	width: 250px;
+	margin: 10px;
+	text-align: left;
+}
+
+.nav-link {
+	color: #FCD3FD;
+	font-size: 20px;
+}
+
+.nav-link:hover {
+	color: #FFFFFF;
+}
+
+.dropdown-menu {
+	background: #212529;
+}
+
+.dropdown-item {
+	color: #FCD3FD;
+}
+
+.dropdown-item:hover {
+	color: #000000;
+	background: #FCD3FD;
+}
+
+@keyframes slide-in {
+	from {
+		padding-top: 90%;
+	}
+
+	to {
+		padding-top: -2%;
+	}
+}
+
+.form-legend {
+	font-size: 26px;
+}
+
+.fullname_form {
+	font-size: 18px;
+	width: 20%;
+	padding: 30px;
+
+}
