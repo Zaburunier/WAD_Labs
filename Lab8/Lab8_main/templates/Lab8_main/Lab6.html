@@ -1,0 +1,105 @@
+{% extends 'Lab8_main/base.html' %}
+
+{% block content %}
+<h1>РТ5-51Б Забурунов Лабработа #6</h1>
+		<form id="form_rw_ticket" action="https://github.com/iu5team/iu5web-fall-2020/wiki/lab_html_forms">
+			<fieldset>
+				<legend align="center">МАРШРУТ</legend>
+
+				<label for="src_city">Введите город, в котором Вы садитесь на поезд:<br></label>
+				<input type="text" name="src_city" placeholder="Город отправления">
+
+				<br><br>
+
+				<label for="dest_city">Введите город, в который Вы прибываете на поезде:<br></label>
+				<input type="text" name="dest_city" placeholder="Город прибытия">
+			</fieldset>
+
+			<fieldset>
+				<legend align="center">ДАТА ПОЕЗДКИ</legend>
+
+				<h4>Дата отправления</h4>
+				<input type="text" name="src_date_m" placeholder="Месяц">
+				<input type="text" name="src_date_d" placeholder="День">
+			</fieldset>
+
+			<fieldset>
+				<legend align="center">ТИП ПОЕЗДА</legend>
+
+				<script type="text/javascript">
+					function twoFloorCheckbox() {
+						let radiobutton = document.getElementById("carriage_type_select");
+						let floor = document.getElementById("floor");
+						if (radiobutton.value == "3") {
+							floor.style.display = "block";
+						} else {
+							floor.style.display = "none";
+						}
+					}
+				</script>
+
+				<label for="carriage_type_select">Выберите вагон:<br></label>
+				<select id="carriage_type_select" onclick="twoFloorCheckbox()">
+					<option value="1">Сидячий</input><br>
+					<option value="2">Плацкарт</input><br>
+					<option value="3">Купе</input><br>
+					<option value="4" >СВ</input><br>
+					<option value="5">Люкс</input><br>
+				</select>
+
+
+				<div id="floor" style="display: none;">
+					<label for="floor_checkbox">Двухэтажный вагон</label>
+					<input type="checkbox" name="floor_checkbox">
+				</div>
+
+				<br><br>
+
+				<label for="train_type_radio">Выберите поезд:<br></label>
+				<input type="radio" name="train_type_radio" value="1">Пассажирский<br>
+				<input type="radio" name="train_type_radio" value="2">Скорый<br>
+				<input type="radio" name="train_type_radio" value="3">Скоростной<br>
+				<input type="radio" name="train_type_radio" value="4">Фирменный<br>
+			</fieldset>
+
+			<script type="text/javascript">
+				function activateSecondStep() {
+					document.getElementById("second_step").style.display = "block";
+				}
+			</script>
+
+			<br>
+            {% load static %}
+			<button type="button" id="search_button" onclick="activateSecondStep()">Поиск <br><img src="{% static "lab6/srch_button.png" %}" height="40px"></button>
+
+
+
+			<div id="second_step" style="display: none;">
+				<br>
+
+				<fieldset id="search">
+					<legend align="center">НАЙДЕННЫЕ МАРШРУТЫ</legend>
+
+					<label for="routes_text">Выберите один из доступных вариантов:<br></label>
+					<input type="text" name="routes_text" list="routes_dl">
+
+					<datalist id="routes_dl">
+						<option value="1721">8 декабря, 12:09</option>
+						<option value="1270">8 декабря, 20:35</option>
+						<option value="1000">10 декабря, 11:00</option>
+					</datalist>
+				</fieldset>
+
+				<br><br>
+
+				<label for="commentary">Сообщите дополнительную информацию (например, о наличии и числе маломобильных граждан)<br></label>
+				<textarea name="commentary" rows="4" cols="40">Комментарий...</textarea>
+
+
+				<br><br>
+
+				<input type="submit" name="submit_button">
+				<input type="reset" name="reset_button">
+			</div>
+		</form>
+{% endblock %}

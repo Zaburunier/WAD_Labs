@@ -1,0 +1,25 @@
+{% extends "Lab8_main/base.html" %}
+{%  block content %}
+        <ul>
+            <li><a href="{% url "CM" %}">Вычислительные средства АСОИУ</a></li>
+            <li><a href="{% url "English" %}">Иностранный Язык</a></li>
+            <li><a href="{% url "RTDA"%}">Оперативный Анализ Данных</a></li>
+            <li><a href="{% url "OS" %}">Операционные Системы</a></li>
+            <li><a href="{% url "WAD" %}">Разработка Интернет-Приложений</a></li>
+            <li><a href="{% url "NaT" %}">Сети и Телекоммуникации</a></li>
+            <li><a href="{% url "CT" %}">Теория Управления</a></li>
+            <li><a href="{% url "PE" %}">Физическая культура</a></li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Название предмета</th>
+                <th>Сумма баллов по модулям</th>
+            </tr>
+
+            <tr>
+                <td>{% block subj_name %}{% endblock %}</td>
+                <td>{% block grade %}{%  endblock %}</td>
+            </tr>
+        </table>
+{% endblock %}

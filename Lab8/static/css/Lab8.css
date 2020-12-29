@@ -1,0 +1,69 @@
+body {
+    background-color: rgba(59,142,145,0.55);
+    alignment: left;
+    font-family: sans-serif;
+    color: black;
+}
+.navbar {
+    background-color: rgba(84,235,227,0.55);
+}
+
+.navbar-brand {
+    color: black;
+}
+
+.container {
+    padding-top: 80px;
+    padding-left: 30px;
+    font-size: 18px;
+}
+
+.container legend {
+    text-align: left;
+    font-family: Arial;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+
+input.list_btn {
+    width: 350px;
+    height: 50px;
+    font-color: white;
+    margin-top: 2px;
+}
+
+ul li {
+    color: black;
+    font-size: 20px;
+}
+
+table tr th {
+    color: white;
+    font-size: 22px;
+    border-color: navy;
+    border-width: 2px;
+    border-top-width: 3px;
+}
+
+table tr td {
+    color: white;
+    font-size: 22px;
+    border-color: navy;
+    border-width: 2px;
+}
+
+table tr td:first-child {
+    color: white;
+    font-size: 22px;
+    border-color: navy;
+    border-width: 2px;
+    border-left-width: 3px;
+}
+
+table tr td:last-child {
+    color: white;
+    font-size: 22px;
+    border-color: navy;
+    border-width: 2px;
+    border-right-width: 3px;
+}

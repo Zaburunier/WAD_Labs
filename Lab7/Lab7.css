@@ -1,13 +1,15 @@
 body {
-	background: #FCD3FD;
+	background-color: #FCD3FD;
 	font-family: sans-serif;
 	font-size: 20px;
+	margin-left: 30px;
 }
 
 .navbar {
 	animation-name: slide-in;
 	animation-duration: 1.5s;
 	animation-timing-function: ease-in-out;
+	margin-left: -30px;
 }
 
 .navbar-brand{
@@ -16,7 +18,7 @@ body {
 	width: 250px;
 	height: 40px;
 	text-align: left;
-	padding-left: 20px;
+	margin-left: 20px;
 }
 
 .navbar-brand:hover {
@@ -69,6 +71,23 @@ body {
 .fullname_form {
 	font-size: 18px;
 	width: 20%;
-	padding: 30px;
 
 }
+
+._table {
+	width: 700px;
+}
+
+h2 {
+	margin-top: 40px;
+}
+
+.table th {
+	border-width: 2px;
+	border-color: #000000;
+}
+
+.table td {
+	border-width: 2px;
+	border-color: #000000;
+} 
