@@ -1,0 +1,19 @@
+{% extends "sportstats/teams/team_detail.html" %}
+
+{% block content %}
+    <form action="" method="post" class="form-control">
+        {% csrf_token %}
+        {{ form }}
+        <select multiple name="tournaments">
+            {% for tournament in tournaments %}
+                <option value="{{ tournament.id }}"
+                {% if tournament in team.tournament_set.all %}
+                    selected
+                {% endif %}
+                >{{ tournament }}</option>
+
+            {% endfor %}
+        </select>
+        <button class="btn btn-primary mt-3" type="submit">Изменить</button>
+    </form>
+{% endblock %}

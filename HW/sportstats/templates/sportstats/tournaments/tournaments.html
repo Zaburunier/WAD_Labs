@@ -1,0 +1,38 @@
+{%  extends "sportstats/index.html" %}
+
+{% block page_title %} Турниры {% endblock %}
+{% block page_header %} Введите параметры для поиска по турнирам {% endblock %}
+
+{% block content %}
+    <form id="tournaments" method="get" action="{% url "tournaments_search" %}">
+
+        <div class="container">
+            <div class="row mb-3">
+                <div class="form-floating col-lg-2">
+                    <input name="tournaments_srch_name" class="form-control" id="floatingName" placeholder="name" value={% block saving_search_name %} {% endblock %}>
+                    <label for="floatingName" class="ms-2">Название</label>
+                </div>
+
+                <div class="form-floating col-lg-3">
+                    <input name="tournaments_srch_host" class="form-control" id="floatingHost" placeholder="host" value={% block saving_search_place %} {% endblock %}>
+                    <label for="floatingHost" class="ms-2">Место проведения</label>
+                </div>
+
+                <div class="form-floating col-lg-2">
+                    <input name="tournaments_srch_year" class="form-control" id="floatingYear" placeholder="year" value={% block saving_search_year %} {% endblock %}>
+                    <label for="floatingYear" class="ms-2">Год</label>
+                </div>
+
+                <div class="col-lg-2">
+                    <button type="submit" class="btn h-100 w-75 btn-outline-secondary">Поиск...</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+          {% block search_results %} {% endblock %}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{%  extends "sportstats/index.html" %}
+
+{% block page_title %} Матчи {% endblock %}
+{% block page_header %} Введите название матча для поиска {% endblock %}
+
+{% block content %}
+    <form id="matches" method="get" action="{% url "matches_search" %}">
+
+        <div class="container">
+            <div class="row mb-3">
+                <div class="form-floating col-lg-3">
+                    <input name="matches_srch_team1" class="form-control" id="floatingTeam1" placeholder="team1" value={% block saving_search_team1 %} {% endblock %}>
+                    <label for="floatingName" class="ms-2">Хозяева</label>
+                </div>
+
+                <div class="form-floating col-lg-3">
+                    <input name="matches_srch_team2" class="form-control" id="floatingTeam2" placeholder="team2" value={% block saving_search_team2 %} {% endblock %}>
+                    <label for="floatingHost" class="ms-2">Гости</label>
+                </div>
+
+                <div class="form-floating col-lg-1">
+                    <input name="matches_srch_year" class="form-control" id="floatingYear" placeholder="year" value={% block saving_search_year %} {% endblock %}>
+                    <label for="floatingYear" class="ms-2">Год</label>
+                </div>
+
+                <div class="col-lg-2">
+                    <button type="submit" class="btn h-100 w-75 btn-outline-secondary">Поиск...</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="container">
+          {% block search_results %} {% endblock %}
+    </div>
+{% endblock %}
